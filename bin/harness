@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'rubygems_over_ssh'
+
+RubyGemsOverSSH.init_tunnel("admin03")
+sleep(60)
+
