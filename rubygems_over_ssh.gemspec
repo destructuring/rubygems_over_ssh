@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "rubygems_over_ssh"
-  s.version     = "0.0.1"
+  s.version     = "0.0.2"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ben Osheroff"]
   s.email       = ["ben@gimbo.net"]
