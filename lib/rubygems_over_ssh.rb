@@ -19,7 +19,7 @@ module RubyGemsOverSSH
       key = host + ":" + port.to_s
       @tunnels ||= {}
       @tunnels[key] ||= begin
-        gateway = Net::SSH::Gateway.new(host, `whoami`.chomp)
+        gateway = Net::SSH::Gateway.new(host, nil)
         local_port = open_tunnel(gateway, port)
         puts "rubygemsoverssh: opened tunnel to #{key} (listening locally on #{local_port})"
         {:gateway => gateway, :local_port => local_port}
@@ -56,7 +56,7 @@ end
 
 begin
   require 'rubygems/commands/inabox_command'
-rescue
+rescue LoadError
 end
 
 if Gem::Commands.const_defined?(:InaboxCommand)
